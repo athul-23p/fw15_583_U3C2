@@ -1,0 +1,10 @@
+
+#navbar{
+    border:1px solid red;
+    display: flex;
+    justify-content: end;
+}
+
+#navbar > div{
+    margin: 10px;
+}
