@@ -14,4 +14,6 @@ function placeOrder(event){
         alert('Order out for delivery')},10000);
     setTimeout(function(){
         alert('Order delivered')},12000);
+
+    localStorage.removeItem('cart');
 }
