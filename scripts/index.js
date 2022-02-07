@@ -20,7 +20,7 @@ async function fetchFoodData(){
         
         
 
-        console.log(menu);
+        // console.log(menu);
         renderMenu(menu);
     }
     catch(err){
@@ -73,7 +73,7 @@ function addToCart(item){
     localStorage.setItem('cart',JSON.stringify(cart));
     updateCartCount(cart.length);
 
-    console.log(item);
+    // console.log(item);
 }
 
 function updateCartCount(count){

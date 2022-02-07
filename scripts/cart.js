@@ -10,7 +10,7 @@ function updateTotal(){
     },0)
 
     console.log(total_price);
-    total.textContent = `$ ${total_price}`;
+    total.textContent = `${total_price}`;
 }
 
 function renderCart(){
@@ -37,9 +37,10 @@ function renderCart(){
 
             let remove_btn = document.createElement('button');
             remove_btn.textContent = 'Remove';
+            remove_btn.setAttribute('id','remove');
             remove_btn.addEventListener('click',function(){
                 removeItem(index);
-            })
+            });
             card.append(img_div,details_div,remove_btn);
             cart_el.append(card);
 
