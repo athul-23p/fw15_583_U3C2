@@ -46,6 +46,11 @@ function renderCart(){
 
         });
     }
+    else{
+        let h2 = document.createElement('h2');
+        h2.textContent = 'Cart is Empty';
+        cart_el.append(h2);
+    }
 }
 
 function removeItem(index){
