@@ -16,6 +16,7 @@
 #menu{
     display: grid;
     grid-template-columns: repeat(3,250px);
+    gap: 10px;
 }
 
 .card img{

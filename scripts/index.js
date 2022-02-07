@@ -14,10 +14,12 @@ async function fetchFoodData(){
         // console.log(data);
     
         let menu = data.meals.map(function(el){
-            el.price = Math.round(Math.random()*200);
+            el.price = Math.round(Math.random()*500);
             return el;
         })
-    
+        
+        
+
         console.log(menu);
         renderMenu(menu);
     }
@@ -54,7 +56,27 @@ function renderMenu(menuData){
         price.textContent= `$ ${el.price}`;
 
         details_div.append(name,price);
-        card.append(img_div,details_div);
+
+        let addTocart_btn = document.createElement("button");
+        addTocart_btn.innerHTML = "Add to Cart";
+        addTocart_btn.setAttribute("id", "addtocart");
+        addTocart_btn.addEventListener('click',function(){addToCart(el)});
+        card.append(img_div,details_div,addTocart_btn);
         menu.append(card);
     })
+}
+
+function addToCart(item){
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    cart.push(item);
+    localStorage.setItem('cart',JSON.stringify(cart));
+    updateCartCount(cart.length);
+
+    console.log(item);
+}
+
+function updateCartCount(count){
+    let count_el = document.getElementById('count');
+    count_el.textContent = count;
 }
